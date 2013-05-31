@@ -15,8 +15,8 @@ return array(
                 'options' => array(
                     'route'    => '/',
                     'defaults' => array(
-                        //'controller' => 'Application\Controller\Index',
-                        'controller' => 'Album\Controller\Album',
+                        'controller' => 'Application\Controller\Index',
+                        //'controller' => 'Album\Controller\Album',
                         'action'     => 'index',
                     ),
                 ),
@@ -56,6 +56,7 @@ return array(
     'service_manager' => array(
         'factories' => array(
             'translator' => 'Zend\I18n\Translator\TranslatorServiceFactory',
+            'navigation' => 'Zend\Navigation\Service\DefaultNavigationFactory',
         ),
     ),
     'translator' => array(
@@ -88,5 +89,34 @@ return array(
         'template_path_stack' => array(
             __DIR__ . '/../view',
         ),
+    ),
+    'navigation' => array(
+	    'default' => array(
+		    array(
+			    'label' => 'Home',
+			    'route' => 'home',
+		    ),
+		    array(
+			    'label' => 'Album',
+			    'route' => 'album',
+			    'pages' => array(
+				    array(
+					    'label' => 'Add',
+					    'route' => 'album',
+					    'action' => 'add',
+				    ),
+				    array(
+					    'label' => 'Edit',
+					    'route' => 'album',
+					    'action' => 'edit',
+				    ),
+				    array(
+					    'label' => 'Delete',
+					    'route' => 'album',
+					    'action' => 'delete',
+				    ),
+			    ),
+		    ),
+	    ),
     ),
 );
