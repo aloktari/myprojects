@@ -99,6 +99,7 @@ return array(
 		    array(
 			    'label' => 'Album',
 			    'route' => 'album',
+			    'action' => 'index',
 			    'pages' => array(
 				    array(
 					    'label' => 'Add',
