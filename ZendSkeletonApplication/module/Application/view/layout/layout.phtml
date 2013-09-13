@@ -30,6 +30,7 @@
                     </a>
                     <a class="brand" href="<?php echo $this->url('home') ?>"><?php echo $this->translate('Skeleton Application') ?></a>
                     <?php // <-- Add this !!
+                    //echo $this->navigation('navigation')->menu();
 					echo $this->navigation('navigation')
 						->menu()
 						->setMinDepth(0)
@@ -51,7 +52,8 @@
         	echo $this->navigation('navigation')
         		->breadcrumbs()
         		->setMinDepth(0)
-        		->setPartial(array('partial/breadcrumb.phtml', 'Album')); // <-- Add this!! ?>
+        		->setPartial(array('partial/breadcrumb.phtml', 'Album')); // <-- Add this!! 
+        	?>
             <?php echo $this->content; ?>
             <hr>
             <footer>
